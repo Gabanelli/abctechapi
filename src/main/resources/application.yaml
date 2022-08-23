@@ -1,0 +1,6 @@
+server:
+  port: 8080
+
+build:
+  name: @name@
+  version: @version@
