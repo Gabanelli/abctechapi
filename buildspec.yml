@@ -1,0 +1,13 @@
+version: 0.2
+phases:
+  build:
+    commands:
+      - echo "Testing and Building"
+      - mvn clean test compile war:war
+  post_build:
+    commands:
+      - echo "Moving artifact"
+      - mv target/*.war ./ROOT.war
+artifacts:
+  files:
+    - ROOT.war
