@@ -15,6 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Order {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -33,6 +34,12 @@ public class Order {
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "end_order_location_id" , foreignKey = @ForeignKey(name ="FK_end_order_id"))
     private OrderLocation endOrderLocation;
+
+    public Order(Long operatorId, OrderLocation startOrderLocation, OrderLocation endOrderLocation) {
+        this.operatorId = operatorId;
+        this.startOrderLocation = startOrderLocation;
+        this.endOrderLocation = endOrderLocation;
+    }
 
     public boolean hasMinAssists (){
         return assists.size() > 0;

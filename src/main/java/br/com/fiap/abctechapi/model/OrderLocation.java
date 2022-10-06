@@ -22,4 +22,10 @@ public class OrderLocation {
     private Double latitude;
     private Double longitude;
     private Date date;
+
+    public OrderLocation(Double latitude, Double longitude, Date date) {
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.date = date;
+    }
 }

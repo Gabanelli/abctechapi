@@ -13,11 +13,13 @@ import java.util.Properties;
 @RequestMapping("/")
 public class HealthCheckController {
 
-    @GetMapping()
-    public ResponseEntity<Object> status() throws IOException {
+    private static final String PROPERTIES_FILE = "application.yml";
+
+    @GetMapping("version")
+    public ResponseEntity<Object> version() throws IOException {
 
         Properties properties = new Properties();
-        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("application.yml");
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream(PROPERTIES_FILE);
         properties.load(inputStream);
 
         return ResponseEntity.ok(properties.getProperty("build.name") + " - " + properties.getProperty("build.version"));
