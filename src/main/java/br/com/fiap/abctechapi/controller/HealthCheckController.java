@@ -13,7 +13,7 @@ import java.util.Properties;
 @RequestMapping("/")
 public class HealthCheckController {
 
-    private static final String PROPERTIES_FILE = "application.yml";
+    private static final String PROPERTIES_FILE = "application.yaml";
 
     @GetMapping("version")
     public ResponseEntity<Object> version() throws IOException {
