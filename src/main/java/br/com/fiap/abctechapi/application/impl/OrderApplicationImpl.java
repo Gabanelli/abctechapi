@@ -57,6 +57,10 @@ public class OrderApplicationImpl implements OrderApplication {
     }
 
     private OrderLocationDto mapOrderLocationToDto(OrderLocation orderLocation){
-        return new OrderLocationDto(orderLocation.getLatitude(), orderLocation.getLongitude(), orderLocation.getDate());
+        OrderLocationDto orderLocationDto = new OrderLocationDto();
+        orderLocationDto.setLatitude(orderLocation.getLatitude());
+        orderLocationDto.setLongitude(orderLocation.getLongitude());
+        orderLocationDto.setDateTime(orderLocation.getDate());
+        return orderLocationDto;
     }
 }

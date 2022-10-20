@@ -7,12 +7,8 @@ import org.springframework.lang.NonNull;
 import java.util.Date;
 
 @Data
-@AllArgsConstructor
 public class OrderLocationDto {
-    @NonNull
-    private final Double latitude;
-    @NonNull
-    private final Double longitude;
-    @NonNull
-    private final Date dateTime;
+    private Double latitude;
+    private Double longitude;
+    private Date dateTime;
 }

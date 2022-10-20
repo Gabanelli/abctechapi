@@ -1,8 +1,6 @@
 package br.com.fiap.abctechapi.application.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.springframework.lang.NonNull;
 
 import java.util.List;
 
@@ -22,14 +20,9 @@ import java.util.List;
  * }
  */
 @Data
-@AllArgsConstructor
 public class OrderDto {
-    @NonNull
-    private final Long operatorId;
-    @NonNull
-    private final List<Long> assists;
-    @NonNull
-    private final OrderLocationDto start;
-    @NonNull
-    private final OrderLocationDto end;
+    private Long operatorId;
+    private List<Long> assists;
+    private OrderLocationDto start;
+    private OrderLocationDto end;
 }
